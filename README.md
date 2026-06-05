@@ -22,3 +22,12 @@ Run them one by one:
     python3 evaluation/test_mitm_simulation.py
     python3 evaluation/test_data_tampering.py
     python3 evaluation/test_performance.py
+
+
+    Step 8 — Use Display Filters to Analyse
+After capturing, use these filters in the display filter bar to focus on specific things:
+What you want to seeFilter to type
+All SecureTrans traffic             tcp.port == 65432
+Only data packets                   tcp.port == 65432 && tcp.len > 0
+Only the handshake                  tcp.flags.syn == 1
+Largest packets (encrypted file)    tcp.port == 65432 && tcp.len > 200
